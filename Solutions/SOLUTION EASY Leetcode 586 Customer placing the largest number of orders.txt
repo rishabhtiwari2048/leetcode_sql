@@ -1,0 +1,7 @@
+SELECT customer_number
+FROM Orders_586
+GROUP BY customer_number
+ORDER BY count(distinct order_number) DESC
+LIMIT 1;
+
+--Time to solution: 02.05.584
