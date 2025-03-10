@@ -1,0 +1,3 @@
+SELECT name FROM Customer_584 WHERE coalesce(referee_id,0) != 2;
+
+--Time to solution: 02.12.216
