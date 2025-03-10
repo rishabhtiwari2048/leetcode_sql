@@ -1,0 +1,6 @@
+SELECT a.name, b.bonus
+FROM Employee_577 a LEFT JOIN Bonus_577 b
+ON (a.empId = b.empId)
+WHERE b.bonus < 1000 OR b.bonus IS NULL;
+
+--Time to solution: 03.21.957
