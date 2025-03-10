@@ -21,7 +21,7 @@ The result format is in the following example.
 Example 1:
 
 Input: 
-Orders table:
+Orders_586 table:
 +--------------+-----------------+
 | order_number | customer_number |
 +--------------+-----------------+
