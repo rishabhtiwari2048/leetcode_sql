@@ -1,0 +1,6 @@
+SELECT class
+FROM Courses_596
+GROUP BY class
+HAVING count(distinct student) >= 5;
+
+--Time to solution: 01.39.354
