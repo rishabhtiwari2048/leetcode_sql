@@ -1,0 +1,7 @@
+SELECT max(num) as num FROM (
+SELECT num
+FROM MyNumbers_619
+GROUP BY num
+HAVING count(num) = 1) a
+
+-Time to solution: 02.20.548
