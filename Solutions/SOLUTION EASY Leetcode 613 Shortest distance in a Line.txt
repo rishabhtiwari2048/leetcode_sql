@@ -1,0 +1,9 @@
+SELECT min(abs(b.x-a.x)) as shortest 
+FROM (
+SELECT * FROM Point_613 ORDER BY x ASC
+) a INNER JOIN 
+(
+SELECT * FROM Point_613 ORDER BY x ASC
+) b ON (b.x>a.x)
+
+--Time to solution: 03.59.049
