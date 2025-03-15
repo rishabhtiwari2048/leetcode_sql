@@ -1,0 +1,6 @@
+UPDATE Salary_627
+SET sex = CASE WHEN sex = 'm' THEN 'f' ELSE 'm' END;
+
+SELECT * FROM Salary_627;
+
+--Time to solution: 03.00.000

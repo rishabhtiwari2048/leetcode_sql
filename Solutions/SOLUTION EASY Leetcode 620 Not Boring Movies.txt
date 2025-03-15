@@ -1,0 +1,6 @@
+SELECT *
+FROM Cinema_620
+WHERE mod(id,2) != 0 AND lower(description) != 'boring'
+ORDER BY rating DESC;
+
+--Time to solution: 02.58.560
