@@ -1,0 +1,6 @@
+SELECT actor_id, director_id
+FROM ActorDirector_1050
+GROUP BY actor_id, director_id
+HAVING count(distinct timestamp) >=3;
+
+--Time to solution: 01.32.055
