@@ -1,0 +1,9 @@
+SELECT 
+extra as report_reason,
+count(distinct post_id) as report_count
+FROM Actions_1113
+WHERE action = 'report' AND action_date = '2019-07-05'::Date - 1
+GROUP BY extra;
+
+
+--Time to solution: 06.36.166
