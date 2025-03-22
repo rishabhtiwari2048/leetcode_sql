@@ -1,0 +1,6 @@
+WITH courses AS (SELECT a.student_id, a.student_name, b.subject_name FROM Students_1280 a CROSS JOIN Subjects_1280 b)
+SELECT a.student_id,a.student_name,a.subject_name, count(b.*) as attended_exams
+FROM Courses a LEFT JOIN Examinations_1280 b ON (a.student_id = b.student_id AND a.subject_name = b.subject_name)
+GROUP BY a.student_id, a.student_name, a.subject_name;
+
+--Time to solution: 06.43.131
