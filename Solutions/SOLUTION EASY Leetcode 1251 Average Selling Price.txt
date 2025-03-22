@@ -1,0 +1,6 @@
+SELECT a.product_id, COALESCE(ROUND(SUM(a.price*b.units)::Numeric/SUM(b.units)::Numeric,2),0) as average_price
+FROM Prices_1251 a JOIN UnitsSold_1251 b 
+	ON (a.product_id = b.product_id AND b.purchase_date BETWEEN start_date AND end_date)
+GROUP BY a.product_id;
+
+--Time to solution: 05.40.939

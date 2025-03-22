@@ -1,0 +1,10 @@
+SELECT a.country_name,
+	CASE WHEN avg(b.weather_state)::Numeric <= 15.00 THEN 'Cold'
+	WHEN avg(b.weather_state)::Numeric >= 25.00 THEN 'Hot'
+	ELSE 'Warm'
+	END weather_type
+FROM Countries_1294 a JOIN Weather_1294 b 
+	ON (a.country_id = b.country_id AND day BETWEEN '2019-11-01'::Date AND '2019-11-30')
+GROUP BY a.country_name;
+
+--Time to solution: 05.08.205
