@@ -1,0 +1,4 @@
+SELECT a.unique_id, b.name
+FROM EmployeeUNI_1378 a RIGHT JOIN Employees_1378 b ON (a.id = b.id);
+
+--Time to solution: 03.01.527

@@ -1,0 +1,6 @@
+SELECT a.name, COALESCE(sum(b.distance),0) as travelled_distance
+FROM Users_1407 a LEFT JOIN Rides_1407 b ON (a.id = b.user_id)
+GROUP BY a.name
+ORDER BY travelled_distance desc, a.name asc; 
+
+--Time to solution: 04.06.455

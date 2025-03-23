@@ -1,0 +1,6 @@
+SELECT a.id, a.year, COALESCE(sum(b.npv),0) as npv
+FROM Queries_1421 a LEFT JOIN NPV_1421 b ON (a.id = b.id and a.year = b.year)
+GROUP BY a.id, a.year
+ORDER BY a.id;
+
+--Time to solution: 03.24.690
