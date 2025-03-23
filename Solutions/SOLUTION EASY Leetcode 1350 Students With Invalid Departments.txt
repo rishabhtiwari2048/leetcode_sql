@@ -1,0 +1,5 @@
+SELECT a.id, a.name, B.*
+FROM Students_1350 a LEFT JOIN Departments_1350 b ON (a.department_id = b.id)
+WHERE b.id IS NULL;
+
+--Time to solution: 05.59.204
