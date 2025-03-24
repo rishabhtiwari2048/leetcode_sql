@@ -1,0 +1,26 @@
+WITH bins as (
+SELECT '[0-5>' as bin, 1 as order
+UNION
+SELECT '[5-10>' as bin, 2 as order
+UNION
+SELECT '[10-15>' as bin, 3 as order
+UNION
+SELECT '[15 or more' as bin, 4 as order
+),
+sessions as (
+SELECT CASE WHEN duration >=0 AND duration < 300 THEN '[0-5>'
+WHEN duration >=300 AND duration <600 THEN '[5-10>'
+WHEN duration >=600 AND duration <900 THEN '[10-15>'
+ELSE '[15 or more'
+END AS bin, 
+count(distinct session_id) as total
+FROM Sessions_1435
+GROUP BY CASE WHEN duration >=0 AND duration < 300 THEN '[0-5>'
+WHEN duration >=300 AND duration <600 THEN '[5-10>'
+WHEN duration >=600 AND duration <900 THEN '[10-15>'
+ELSE '[15 or more' END)
+SELECT a.bin, coalesce(b.total,0) as total
+FROM bins a LEFT JOIN sessions b ON (a.bin = b.bin)
+ORDER BY a.order;
+
+--Time to solution: 21.15.402
