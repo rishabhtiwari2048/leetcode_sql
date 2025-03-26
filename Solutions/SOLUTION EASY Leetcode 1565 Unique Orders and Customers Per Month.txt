@@ -1,0 +1,8 @@
+SELECT TO_CHAR(order_date,'YYYY-MM')as month,
+count(order_id) as order_count,
+count(distinct customer_id) as customer_count
+FROM Orders_1565
+WHERE invoice > 20
+GROUP BY TO_CHAR(order_date,'YYYY-MM');
+
+--Time to solution: 02.28.897

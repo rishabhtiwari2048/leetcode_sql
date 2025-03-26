@@ -1,0 +1,7 @@
+SELECT a.name as warehouse_name,
+sum(a.units*(b.length*b.width*b.height)) as volume
+FROM Warehouse_1571 a INNER JOIN Products_1571 b ON (a.product_id = b.product_id)
+GROUP BY a.name
+ORDER BY warehouse_name;
+
+--Time to solution: 04.34.681

@@ -1,0 +1,8 @@
+SELECT a.customer_id,
+count(a.customer_id) count_no_trans
+FROM Visits_1581 a LEFT JOIN Transactions_1581 b ON (a.visit_id = b.visit_id)
+WHERE b.transaction_id IS NULL
+GROUP BY a.customer_id
+ORDER BY count_no_trans desc, customer_id;
+
+--Time to solution: 07.29.758
