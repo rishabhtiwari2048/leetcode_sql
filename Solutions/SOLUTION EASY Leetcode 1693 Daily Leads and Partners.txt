@@ -1,0 +1,7 @@
+SELECT date_id, make_name, 
+	count(distinct lead_id) as unique_leads, 
+	count(distinct partner_id) as unique_partners
+FROM DailySales_1693
+GROUP BY date_id, make_name;
+
+--Time to solution: 02.42.129
