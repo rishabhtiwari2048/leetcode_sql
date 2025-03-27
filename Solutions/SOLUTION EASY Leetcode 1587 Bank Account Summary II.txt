@@ -1,0 +1,6 @@
+SELECT a.name, SUM(b.amount) as balance
+FROM Users_1587 a INNER JOIN Transactions_1587 b ON (a.account = b.account)
+GROUP BY a.name
+HAVING SUM(b.amount) > 10000;
+
+--Time to solution: 02.56.110
