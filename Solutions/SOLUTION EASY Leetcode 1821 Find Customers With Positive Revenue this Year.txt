@@ -1,0 +1,5 @@
+SELECT customer_id
+FROM Customers_1821
+WHERE revenue > 0 AND year = 2021;
+
+--Time to solution: 01.07.974
