@@ -1,0 +1,5 @@
+SELECT count(distinct customer_id) as rich_count
+FROM Store_2082
+WHERE amount > 500;
+
+--Time to solution: 01.21.506
