@@ -1,0 +1,3 @@
+SELECT concat(TRIM(TO_CHAR(day,'Day')),', ',TRIM(TO_CHAR(day,'Month')),' ',TO_CHAR(day,'DD')::Int,', ',TO_CHAR(day,'yyyy')) as day
+FROM Days_1853;
+--Time to solution: 03.50.737
