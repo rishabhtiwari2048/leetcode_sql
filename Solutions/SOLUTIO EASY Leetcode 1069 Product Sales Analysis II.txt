@@ -1,0 +1,5 @@
+SELECT a.product_id, SUM(b.quantity) as total_quantity
+FROM Product_1069 a INNER JOIN Sales_1069 b ON (a.product_id = b.product_id)
+GROUP BY a.product_id;
+
+--Time to solution: 03.05.343

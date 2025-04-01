@@ -1,0 +1,4 @@
+SELECT ROUND((SUM(CASE WHEN order_date = customer_pref_delivery_date THEN 1 ELSE 0 END)::Numeric/Count(*)::Numeric)*100,2) AS Immediate_percentage
+FROM Delivery_1173;
+
+--Time to solution: 02.45.162
