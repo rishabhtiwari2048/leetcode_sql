@@ -1,0 +1,11 @@
+SELECT a.employee_id,
+	CASE WHEN a.no_of_dept > 1 THEN
+	(SELECT department_id FROM Employee_1789 WHERE employee_id = a.employee_id and primary_flag = 'Y')
+	ELSE
+	(SELECT department_id FROM Employee_1789 WHERE employee_id = a.employee_id)
+	END as department_id
+FROM (SELECT employee_id, count(distinct department_id) as no_of_dept
+FROM Employee_1789
+GROUP BY employee_id) a;
+
+--Time to solution: 09.25.027
