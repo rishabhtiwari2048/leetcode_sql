@@ -1,0 +1,5 @@
+SELECT distinct author_id
+FROM Views_1148
+WHERE author_id = viewer_id;
+
+--Time to solution: 00.48.727
