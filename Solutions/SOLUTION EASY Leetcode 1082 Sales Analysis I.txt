@@ -1,0 +1,6 @@
+SELECT distinct seller_id
+FROM Sales_1082
+GROUP BY seller_id
+HAVING SUM(price) = (SELECT max(total_sales) FROM (SELECT sum(price) as total_sales FROM Sales_1082 GROUP BY seller_id));
+
+--Time to solution: 00.48.727
