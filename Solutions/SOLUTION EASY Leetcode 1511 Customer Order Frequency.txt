@@ -1,0 +1,18 @@
+WITH data AS (
+SELECT a.customer_id, a.name, 
+	to_char(c.order_date,'yyyy-MM') as order_date,
+	SUM(c.quantity*b.price) as total_spend
+FROM Customers_1511 a INNER JOIN Orders_1511 c ON (a.customer_id = c.customer_id)
+	INNER JOIN Product_1511 b ON (c.product_id = b.product_id)
+GROUP BY a.customer_id, a.name, to_char(c.order_date,'yyyy-MM')
+HAVING SUM(c.quantity*b.price) >= 100
+)
+SELECT DISTINCT a.customer_id, a.name FROM data a
+WHERE EXISTS (SELECT 1 FROM data b WHERE b.customer_id = a.customer_id
+	AND b.total_spend >= 100
+	AND b.order_date = '2020-06')
+AND EXISTS (SELECT 1 FROM data c WHERE c.customer_id = a.customer_id
+	AND c.total_spend >= 100
+	AND c.order_date = '2020-07') 
+
+--Time to solution: 14.07.724
