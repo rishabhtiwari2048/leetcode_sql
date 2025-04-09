@@ -1,0 +1,7 @@
+SELECT contest_id, ROUND((count(distinct user_id)::Numeric/(SELECT count(*) FROM Users_1633)::Numeric)*100,2) as percentage
+FROM Register_1633
+GROUP BY contest_id
+ORDER BY percentage desc, contest_id asc; 
+
+
+--Time to solution: 03.02.393
