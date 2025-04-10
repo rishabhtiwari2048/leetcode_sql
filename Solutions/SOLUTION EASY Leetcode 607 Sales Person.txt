@@ -1,0 +1,8 @@
+SELECT a1.name
+FROM Salesperson_607 a1
+EXCEPT
+SELECT a2.name
+FROM Salesperson_607 a2 INNER JOIN Orders_607 o ON (a2.sales_id = o.sales_id)
+INNER JOIN Company_607 c ON (c.com_id = o.sales_id)
+
+--Time to solution: 05.19.520
