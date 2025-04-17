@@ -1,0 +1,18 @@
+WITH NewYorkStudents AS (
+	SELECT 1 as id, count(student_id) as newyork_no
+	FROM NewYork_607
+	WHERE score >= 90
+),
+CaliforniaStudents AS (
+	SELECT 1 as id, count(student_id) as california_no 
+	FROM California_607
+	WHERE score >= 90
+)
+SELECT CASE WHEN a.newyork_no > b.california_no
+THEN 'NewYork University'
+WHEN b.california_no > a.newyork_no THEN 'California University'
+ELSE 'No Winner'
+END as winner
+FROM NewYorkStudents a INNER JOIN CaliforniaStudents b ON (a.id = b.id)
+
+--Time to solution: 08.02.305
