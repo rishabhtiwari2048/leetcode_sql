@@ -1,0 +1,6 @@
+SELECT b.project_id, round(avg(a.experience_years),2) as average_years
+FROM Employee_1075 a INNER JOIN Project_1075 b ON (a.employee_id = b.employee_id)
+GROUP BY b.project_id
+ORDER BY b.project_id;
+
+--Time to solution: 02.28.631
