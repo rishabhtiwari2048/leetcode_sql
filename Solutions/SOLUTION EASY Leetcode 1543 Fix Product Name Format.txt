@@ -1,0 +1,6 @@
+SELECT LOWER(product_name) as product_name, TO_CHAR(sale_date,'YYYY-MM') as sale_date, count(sale_id) as total
+FROM Sales_1543
+GROUP BY LOWER(product_name),TO_CHAR(sale_date,'YYYY-MM')
+ORDER BY product_name, sale_date;
+
+--Time to solution: 04.23.933
