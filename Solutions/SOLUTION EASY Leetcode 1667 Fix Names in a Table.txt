@@ -1,0 +1,4 @@
+SELECT user_id, INITCAP(name) as name
+FROM Users_1667;
+
+--Time to solution: 01.13.290
