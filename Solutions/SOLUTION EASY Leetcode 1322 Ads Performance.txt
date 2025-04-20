@@ -1,0 +1,6 @@
+SELECT ad_id, ROUND((SUM(CASE WHEN action = 'Clicked' THEN 1 ELSE 0 END)::Numeric/CASE WHEN (SUM(CASE WHEN action IN ('Clicked','Viewed') THEN 1 ELSE 0 END)::Numeric)=0 THEN 1 ELSE SUM(CASE WHEN action IN ('Clicked','Viewed') THEN 1 ELSE 0 END)::Numeric END)*100,2) as ctr
+FROM Ads_1322
+GROUP BY ad_id
+ORDER BY ctr DESC, ad_id ASC;
+
+--Time to solution: 08.07.521
