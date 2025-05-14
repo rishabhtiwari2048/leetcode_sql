@@ -1,0 +1,6 @@
+SELECT a.session_id
+FROM Playback_1809 a LEFT JOIN Ads_1809 b 
+	ON (a.customer_id = b.customer_id AND (b.timestamp BETWEEN a.start_time AND a.end_time))
+WHERE ad_id IS NULL;
+
+--Time to solution: 09.50.110
