@@ -1,0 +1,5 @@
+SELECT a.player_id, a.device_id
+FROM Activity_512 a
+WHERE a.event_date  = (SELECT min(b.event_date) FROM Activity_512 b WHERE b.player_id = a.player_id)
+
+--Time to solution: 02.46.340

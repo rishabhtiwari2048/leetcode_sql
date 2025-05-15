@@ -1,0 +1,5 @@
+SELECT *
+FROM Users_1517
+WHERE mail ~ '^[a-zA-Z][a-zA-z0-9_.-]*@leetcode.com$'
+
+--Time to solution: 07.17.960
