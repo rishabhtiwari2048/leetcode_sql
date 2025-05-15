@@ -1,0 +1,5 @@
+SELECT a.seller_name
+FROM Seller_1607 a LEFT JOIN (SELECT * FROM Orders_1607 WHERE DATE_PART('year',sale_date) = 2020) b ON (a.seller_id = b.seller_id)
+WHERE b.order_id IS NULL;
+
+--Time to solution: 09.03.541
